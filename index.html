@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🧠 StudyVault</title>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --text: #f0f0f0;
+      --accent: #8b00ff;
+      --card: #1a1a1a;
+      --hover: #9d4edd;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--accent);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(139, 0, 255, 0.3);
+    }
+    h1, h2, h3 {
+      margin: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .summary-card {
+      background: var(--card);
+      border-left: 5px solid var(--accent);
+      padding: 1.2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .summary-card h3 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    .hidden-panel {
+      display: none;
+      background: #000;
+      border: 1px dashed red;
+      padding: 1rem;
+      margin: 2rem 0;
+      color: #0f0;
+    }
+    .hidden-panel input {
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.5rem 0;
+      background: #111;
+      color: #0f0;
+      border: 1px solid #333;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: #111;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 StudyVault</h1>
+    <p>Secure. Private. Forever.</p>
+  </header>
+
+  <div class="container">
+    <div class="summary-card">
+      <h3>📌 Mathematics - Calculus</h3>
+      <p>Studied limits, derivatives, and integration techniques. Focus: Chain rule, u-substitution, area under curve. Practice: 50+ problems from past exams (2020–2023).</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>📌 Physics - Electromagnetism</h3>
+      <p>Maxwell’s equations, Faraday’s law, Lenz’s law. Solved circuit problems involving inductors and capacitors. Reviewed JEE Advanced 2022 paper.</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>📌 Computer Science - OS & Networking</h3>
+      <p>Paging, segmentation, deadlock handling. TCP/IP model, subnetting, DNS spoofing (ethical only 😉). Practiced Wireshark analysis.</p>
+    </div>
+
+    <div class="summary-card">
+      <h3>📌 Chemistry - Organic Reactions</h3>
+      <p>Named reactions: Grignard, Friedel-Crafts, Aldol condensation. Mechanism mapping and yield prediction. Solved NEET 2021–2023 papers.</p>
+    </div>
+
+    <!-- Hidden Admin Panel (Trigger with Konami Code) -->
+    <div id="adminPanel" class="hidden-panel">
+      <h3>🔓 Admin Access Granted</h3>
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <button onclick="alert('Access Denied. But you’re close... 🔐')">Login</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 StudyVault. All data encrypted. No backups. No mercy.
+  </footer>
+
+  <script>
+    // Konami Code to unlock hidden panel
+    const code = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let index = 0;
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === code[index]) {
+        index++;
+        if (index === code.length) {
+          document.getElementById('adminPanel').style.display = 'block';
+          alert('Welcome, Admin. The keys are yours. 💀');
+          index = 0;
+        }
+      } else {
+        index = 0;
+      }
+    });
+  </script>
+</body>
+</html>
